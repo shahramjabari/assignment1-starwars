@@ -4,10 +4,77 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/variables.css" />
+    <link rel="stylesheet" href="./src/css/navbar.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <!-- Navbar -->
+    <nav class="navbar navbar--primary">
+      <img
+        src="./src/assets/icons/icons8-star-wars-100.svg"
+        alt="Star Wars logo"
+        class="navbar__logo"
+      />
+      <div class="navbar__menu">
+        <a href="#" class="navbar__link navbar__link--active">Home</a>
+        <a href="#" class="navbar__link">About</a>
+        <a href="#" class="navbar__link">Services</a>
+        <a href="#" class="navbar__link">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <section class="main-content">
+      <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="card card--featured">
+          <img
+            src="./src/assets/images/starwars-movie.jpg"
+            alt="Image 1"
+            class="card__image"
+          />
+          <h3 class="card__title">Star Wars Movies</h3>
+          <p class="card__description">Dette er litt tekst for kort 1.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <img
+            src="./src/assets/images/artu.jpg"
+            alt="Image 2"
+            class="card__image"
+          />
+          <h3 class="card__title">Star Wars people</h3>
+          <p class="card__description">Dette er litt tekst for kort 2.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <img
+            src="./src/assets/images/planet.jpg"
+            alt="Image 3"
+            class="card__image"
+          />
+          <h3 class="card__title">Star Wars planets</h3>
+          <p class="card__description">Dette er litt tekst for kort 3.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card card--highlighted">
+          <img
+            src="./src/assets/images/StarWars-vehicles.jpg"
+            alt="Image 4"
+            class="card__image"
+          />
+          <h3 class="card__title">Star Wars vehicles</h3>
+          <p class="card__description">Dette er litt tekst for kort 4.</p>
+        </div>
+      </div>
+    </section>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
