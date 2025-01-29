@@ -51,6 +51,14 @@ const renderPlanets = async () => {
       surfaceWater.textContent = `Surface Water: ${planet.surface_water}%`;
       card.append(surfaceWater);
 
+      const backButton = document.createElement("button");
+      backButton.classList.add("card__button");
+      backButton.textContent = "Back To Homepage";
+      backButton.addEventListener("click", () => {
+        window.location.href = "./index.html";
+      });
+      card.append(backButton);
+
       planetsContainer.append(card);
     });
   }

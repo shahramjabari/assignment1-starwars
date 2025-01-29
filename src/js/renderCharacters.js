@@ -46,6 +46,14 @@ const renderCharacter = async () => {
       birthYear.textContent = `Birth Year: ${character.birth_year}`;
       card.append(birthYear);
 
+      const backButton = document.createElement("button");
+      backButton.classList.add("card__button");
+      backButton.textContent = "Back To Homepage";
+      backButton.addEventListener("click", () => {
+        window.location.href = "./index.html";
+      });
+      card.append(backButton);
+
       peopleContainer.append(card);
     });
   }
