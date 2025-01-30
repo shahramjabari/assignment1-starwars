@@ -5,7 +5,7 @@ const fetchCharacter = async () => {
 
     // henter fra render "peoplecontainer"
     const makeCharacter = (peopleContainer) => {
-      const characters = peopleContainer.slice(0, 6);
+      const characters = peopleContainer.slice(0, 10);
       return characters.map((character, index) => ({
         name: character.name,
         height: character.height,

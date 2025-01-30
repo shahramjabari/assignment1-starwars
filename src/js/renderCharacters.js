@@ -46,16 +46,19 @@ const renderCharacter = async () => {
       birthYear.textContent = `Birth Year: ${character.birth_year}`;
       card.append(birthYear);
 
-      const backButton = document.createElement("button");
-      backButton.classList.add("card__button");
-      backButton.textContent = "Back To Homepage";
-      backButton.addEventListener("click", () => {
-        window.location.href = "./index.html";
-      });
-      card.append(backButton);
-
       peopleContainer.append(card);
     });
+    const homePageButton = document.createElement("button");
+    homePageButton.classList.add("home-page__button");
+    homePageButton.textContent = "Back To Homepage";
+    homePageButton.addEventListener("click", () => {
+      window.location.href = "./index.html";
+    });
+
+    const buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("button-container");
+    peopleContainer.append(buttonContainer);
+    buttonContainer.append(homePageButton);
   }
 };
 

@@ -51,16 +51,19 @@ const renderPlanets = async () => {
       surfaceWater.textContent = `Surface Water: ${planet.surface_water}%`;
       card.append(surfaceWater);
 
-      const backButton = document.createElement("button");
-      backButton.classList.add("card__button");
-      backButton.textContent = "Back To Homepage";
-      backButton.addEventListener("click", () => {
-        window.location.href = "./index.html";
-      });
-      card.append(backButton);
-
       planetsContainer.append(card);
     });
+    const homePageButton = document.createElement("button");
+    homePageButton.classList.add("home-page__button");
+    homePageButton.textContent = "Back To Homepage";
+    homePageButton.addEventListener("click", () => {
+      window.location.href = "./index.html";
+    });
+
+    const buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("button-container");
+    planetsContainer.append(buttonContainer);
+    buttonContainer.append(homePageButton);
   }
 };
 export default renderPlanets;

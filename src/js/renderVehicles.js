@@ -51,15 +51,19 @@ const renderVehicles = async () => {
       cargoCapacity.textContent = `Cargo Capacity: ${vehicle.cargo_capacity}`;
       card.append(cargoCapacity);
 
-      const backButton = document.createElement("button");
-      backButton.classList.add("card__button");
-      backButton.textContent = "Back To Homepage";
-      backButton.addEventListener("click", () => {
-        window.location.href = "./index.html";
-      });
-      card.append(backButton);
       vehiclesContainer.append(card);
     });
+    const homePageButton = document.createElement("button");
+    homePageButton.classList.add("home-page__button");
+    homePageButton.textContent = "Back To Homepage";
+    homePageButton.addEventListener("click", () => {
+      window.location.href = "./index.html";
+    });
+
+    const buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("button-container");
+    vehiclesContainer.append(buttonContainer);
+    buttonContainer.append(homePageButton);
   }
 };
 

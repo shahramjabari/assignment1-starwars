@@ -40,6 +40,7 @@ body {
   justify-content: space-between;
   text-align: center;
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .card--featured {
@@ -71,4 +72,25 @@ body {
 .card__description {
   color: #555;
   font-size: 0.95rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: var(--spacing-large);
+}
+.home-page__button {
+  background-color: #ffdd00;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-medium);
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.home-page__button:hover {
+  background-color: #ffe8d6;
+  transition: background-color 0.3s;
 }
