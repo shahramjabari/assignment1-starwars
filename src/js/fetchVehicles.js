@@ -3,8 +3,8 @@ const fetchVehicles = async () => {
     const response = await fetch("https://swapi.py4e.com/api/vehicles");
     const data = await response.json();
 
-    const makeVehicles = async () => {
-      const vehicles = data.results;
+    const makeVehicles = async (vehiclesContainer) => {
+      const vehicles = vehiclesContainer.slice(0, 6);
       return vehicles.map((vehicle) => ({
         name: vehicle.name,
         model: vehicle.model,

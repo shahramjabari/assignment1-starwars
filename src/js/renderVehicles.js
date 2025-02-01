@@ -1,5 +1,14 @@
 import fetchVehicles from "./fetchVehicles.js";
 
+const vehicleImages = {
+  "Sand Crawler": "./src/assets/images/sandCrawler.jpg",
+  "T-16 skyhopper": "./src/assets/images/t16-skyhopper.jpg",
+  "X-34 landspeeder": "./src/assets/images/x-34.jpg",
+  "TIE/LN starfighter": "./src/assets/images/TIE:LN-starfighter.jpg",
+  Snowspeeder: "./src/assets/images/Snowspeeder.jpg",
+  "TIE bomber": "./src/assets/images/Tie-Bomber.jpg",
+};
+
 const renderVehicles = async () => {
   const vehicleList = await fetchVehicles();
 
@@ -10,6 +19,11 @@ const renderVehicles = async () => {
     vehicleList.forEach((vehicle) => {
       const card = document.createElement("div");
       card.classList.add("card");
+
+      const vehicleImage = document.createElement("img");
+      vehicleImage.classList.add("card__image");
+      vehicleImage.src = vehicleImages[vehicle.name];
+      card.append(vehicleImage);
 
       const title = document.createElement("h3");
       title.classList.add("card__title");

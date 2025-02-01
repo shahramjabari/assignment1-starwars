@@ -1,5 +1,14 @@
 import fetchCharacter from "./fetchCharacters.js";
 
+const characterImages = {
+  "Luke Skywalker": "./src/assets/images/lukesky.jpg",
+  "C-3PO": "./src/assets/images/c-3po.jpg",
+  "R2-D2": "./src/assets/images/r2d2.jpg",
+  "Darth Vader": "./src/assets/images/darth-vader.jpg",
+  "Leia Organa": "./src/assets/images/leia.jpg",
+  "Owen Lars": "./src/assets/images/owen.jpg",
+};
+
 const renderCharacter = async () => {
   const characterList = await fetchCharacter();
 
@@ -10,6 +19,11 @@ const renderCharacter = async () => {
     characterList.forEach((character) => {
       const card = document.createElement("div");
       card.classList.add("card");
+
+      const characterImage = document.createElement("img");
+      characterImage.classList.add("card__image");
+      characterImage.src = characterImages[character.name];
+      card.append(characterImage);
 
       const title = document.createElement("h3");
       title.classList.add("card__title");

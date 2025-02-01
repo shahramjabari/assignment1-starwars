@@ -1,5 +1,14 @@
 import fetchPlanets from "./fetchPlanets.js";
 
+const planetImages = {
+  Tatooine: "./src/assets/images/tataoonie.jpg",
+  Alderaan: "./src/assets/images/alderaan.jpg",
+  "Yavin IV": "./src/assets/images/yavin-iv.jpg",
+  Hoth: "./src/assets/images/hoth.jpg",
+  Dagobah: "./src/assets/images/dagobah.jpg",
+  Bespin: "./src/assets/images/bespin.jpg",
+};
+
 const renderPlanets = async () => {
   const planetList = await fetchPlanets();
 
@@ -10,6 +19,11 @@ const renderPlanets = async () => {
     planetList.forEach((planet) => {
       const card = document.createElement("div");
       card.classList.add("card");
+
+      const planetImage = document.createElement("img");
+      planetImage.classList.add("card__image");
+      planetImage.src = planetImages[planet.name];
+      card.append(planetImage);
 
       const title = document.createElement("h3");
       title.classList.add("card__title");

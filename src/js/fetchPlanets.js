@@ -3,8 +3,8 @@ const fetchPlanets = async () => {
     const response = await fetch("https://swapi.py4e.com/api/planets");
     const data = await response.json();
 
-    const makePlanets = async () => {
-      const planets = data.results;
+    const makePlanets = async (planetsContainer) => {
+      const planets = planetsContainer.slice(0, 6);
       return planets.map((planet) => ({
         name: planet.name,
         population: planet.population,
