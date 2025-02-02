@@ -7,6 +7,9 @@ import renderPlanets from "./renderPlanets.js";
 import fetchVehicles from "./fetchVehicles.js";
 import renderVehicles from "./renderVehicles.js";
 
+import fetchMovies from "./fetchMovies.js";
+import renderMovies from "./renderMovies.js";
+
 const cardPeople = document.querySelector(".card__people");
 cardPeople.addEventListener("click", renderCharacter);
 
@@ -15,3 +18,6 @@ cardPlanets.addEventListener("click", renderPlanets);
 
 const cardVehicles = document.querySelector(".card__vehicles");
 cardVehicles.addEventListener("click", renderVehicles);
+
+const cardMovies = document.querySelector(".card__movies");
+cardMovies.addEventListener("click", renderMovies);
