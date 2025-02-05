@@ -107,7 +107,6 @@
     display: flex;
   }
 
-  /* Animasjon for hamburgermeny */
   .navbar__toggle.active div:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }

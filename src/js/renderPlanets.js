@@ -67,17 +67,18 @@ const renderPlanets = async () => {
 
       planetsContainer.append(card);
     });
+
     const homePageButton = document.createElement("button");
     homePageButton.classList.add("home-page__button");
     homePageButton.textContent = "Back To Homepage";
     homePageButton.addEventListener("click", () => {
       window.location.href = "./index.html";
     });
-
     const buttonContainer = document.createElement("div");
     buttonContainer.classList.add("button-container");
-    planetsContainer.append(buttonContainer);
     buttonContainer.append(homePageButton);
+    planetsContainer.append(buttonContainer);
   }
 };
+
 export default renderPlanets;
