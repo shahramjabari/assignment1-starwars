@@ -19,7 +19,6 @@ const fetchPlanets = async () => {
     const planetList = makePlanets(data.results);
     return planetList;
   } catch (error) {
-    console.log("Error fetching planets:");
     return;
   }
 };

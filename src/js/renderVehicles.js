@@ -8,7 +8,6 @@ const vehicleImages = {
   Snowspeeder: "./src/assets/images/Snowspeeder.jpg",
   "TIE bomber": "./src/assets/images/Tie-Bomber.jpg",
 };
-
 const renderVehicles = async () => {
   const vehicleList = await fetchVehicles();
 

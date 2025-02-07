@@ -17,10 +17,8 @@ const fetchCharacter = async () => {
       }));
     };
     const characterList = makeCharacter(data.results);
-    console.log(characterList);
     return characterList;
   } catch (error) {
-    console.log("Error fetching characters:");
     return;
   }
 };

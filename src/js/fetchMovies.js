@@ -15,10 +15,8 @@ const fetchMovies = async () => {
     };
 
     const movieList = makeMovies(data.results);
-    console.log(movieList);
     return movieList;
   } catch (error) {
-    console.error("Error fetching movies:", error);
     return;
   }
 };

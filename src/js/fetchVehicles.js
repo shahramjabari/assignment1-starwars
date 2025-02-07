@@ -19,7 +19,6 @@ const fetchVehicles = async () => {
     const vehicleList = makeVehicles(data.results);
     return vehicleList;
   } catch (error) {
-    console.log("Error fetching vehicles:");
     return;
   }
 };
