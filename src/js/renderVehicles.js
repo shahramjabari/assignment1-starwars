@@ -43,7 +43,7 @@ const renderVehicles = async () => {
     const vehicleImage = document.createElement("img");
     vehicleImage.classList.add("card__image");
     vehicleImage.src =
-      vehicleImages[vehicle.name] || "./assets/images/default.jpg";
+      vehicleImages[vehicle.name] || "/assets/images/default.jpg";
     card.append(vehicleImage);
 
     const info = [

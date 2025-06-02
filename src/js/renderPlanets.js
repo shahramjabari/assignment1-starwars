@@ -42,8 +42,7 @@ const renderPlanets = async () => {
 
     const planetImage = document.createElement("img");
     planetImage.classList.add("card__image");
-    planetImage.src =
-      planetImages[planet.name] || "./assets/images/default.jpg";
+    planetImage.src = planetImages[planet.name] || "/assets/images/default.jpg";
     card.append(planetImage);
 
     const info = [

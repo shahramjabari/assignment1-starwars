@@ -44,7 +44,7 @@ const renderCharacter = async () => {
     const characterImage = document.createElement("img");
     characterImage.classList.add("card__image");
     characterImage.src =
-      characterImages[character.name] || "./assets/images/default.jpg";
+      characterImages[character.name] || "/assets/images/default.jpg";
     card.append(characterImage);
 
     const title = document.createElement("h3");
