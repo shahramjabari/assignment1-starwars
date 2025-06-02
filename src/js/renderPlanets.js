@@ -2,12 +2,12 @@
 import fetchPlanets from "./fetchPlanets.js";
 
 const planetImages = {
-  Tatooine: "./src/assets/images/tataoonie.jpg",
-  Alderaan: "./src/assets/images/alderaan.jpg",
-  "Yavin IV": "./src/assets/images/yavin-iv.jpg",
-  Hoth: "./src/assets/images/hoth.jpg",
-  Dagobah: "./src/assets/images/dagobah.jpg",
-  Bespin: "./src/assets/images/bespin.jpg",
+  Tatooine: "/assets/images/tataoonie.jpg",
+  Alderaan: "/assets/images/alderaan.jpg",
+  "Yavin IV": "/assets/images/yavin-iv.jpg",
+  Hoth: "/assets/images/hoth.jpg",
+  Dagobah: "/assets/images/dagobah.jpg",
+  Bespin: "/assets/images/bespin.jpg",
 };
 
 const renderPlanets = async () => {

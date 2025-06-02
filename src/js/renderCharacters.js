@@ -2,12 +2,12 @@
 import fetchCharacter from "./fetchCharacters.js";
 
 const characterImages = {
-  "Luke Skywalker": "./src/assets/images/lukesky.jpg",
-  "C-3PO": "./src/assets/images/c-3po.jpg",
-  "R2-D2": "./src/assets/images/r2d2.jpg",
-  "Darth Vader": "./src/assets/images/darth-vader.jpg",
-  "Leia Organa": "./src/assets/images/leia.jpg",
-  "Owen Lars": "./src/assets/images/owen.jpg",
+  "Luke Skywalker": "/assets/images/lukesky.jpg",
+  "C-3PO": "/assets/images/c-3po.jpg",
+  "R2-D2": "/assets/images/r2d2.jpg",
+  "Darth Vader": "/assets/images/darth-vader.jpg",
+  "Leia Organa": "/assets/images/leia.jpg",
+  "Owen Lars": "/assets/images/owen.jpg",
 };
 
 const renderCharacter = async () => {

@@ -2,12 +2,12 @@
 import fetchMovies from "./fetchMovies.js";
 
 const movieImages = {
-  "A New Hope": "./src/assets/images/a-new-hope.jpg",
-  "The Empire Strikes Back": "./src/assets/images/the-empire-strikes-back.jpg",
-  "Return of the Jedi": "./src/assets/images/return-of-the-jedi.jpg",
-  "The Phantom Menace": "./src/assets/images/The-Phantom-Menace.jpg",
-  "Attack of the Clones": "./src/assets/images/Attack-of-the-Clones.jpg",
-  "Revenge of the Sith": "./src/assets/images/Revenge-of-the-Sith.jpg",
+  "A New Hope": "/assets/images/a-new-hope.jpg",
+  "The Empire Strikes Back": "/assets/images/the-empire-strikes-back.jpg",
+  "Return of the Jedi": "/assets/images/return-of-the-jedi.jpg",
+  "The Phantom Menace": "/assets/images/The-Phantom-Menace.jpg",
+  "Attack of the Clones": "/assets/images/Attack-of-the-Clones.jpg",
+  "Revenge of the Sith": "/assets/images/Revenge-of-the-Sith.jpg",
 };
 
 const renderMovies = async () => {
