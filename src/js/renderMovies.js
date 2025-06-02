@@ -42,8 +42,7 @@ const renderMovies = async () => {
 
     const movieImage = document.createElement("img");
     movieImage.classList.add("card__image");
-    movieImage.src =
-      movieImages[movie.title] || "./src/assets/images/default.jpg";
+    movieImage.src = movieImages[movie.title] || "./assets/images/default.jpg";
     card.append(movieImage);
 
     const title = document.createElement("h3");
