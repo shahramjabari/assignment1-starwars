@@ -3,7 +3,7 @@ const fetchVehicles = async () => {
     const response = await fetch("https://swapi.py4e.com/api/vehicles");
     const data = await response.json();
 
-    const makeVehicles = async (vehiclesContainer) => {
+    const makeVehicles = (vehiclesContainer) => {
       const vehicles = vehiclesContainer.slice(0, 6);
       return vehicles.map((vehicle) => ({
         name: vehicle.name,
@@ -16,10 +16,12 @@ const fetchVehicles = async () => {
         cargo_capacity: vehicle.cargo_capacity,
       }));
     };
-    const vehicleList = makeVehicles(data.results);
-    return vehicleList;
+
+    return makeVehicles(data.results);
   } catch (error) {
-    return;
+    console.error("Failed to fetch vehicles:", error);
+    return null;
   }
 };
+
 export default fetchVehicles;

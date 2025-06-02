@@ -14,10 +14,10 @@ const fetchMovies = async () => {
       }));
     };
 
-    const movieList = makeMovies(data.results);
-    return movieList;
+    return makeMovies(data.results);
   } catch (error) {
-    return;
+    console.error("Failed to fetch movies:", error);
+    return null;
   }
 };
 

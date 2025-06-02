@@ -3,7 +3,7 @@ const fetchPlanets = async () => {
     const response = await fetch("https://swapi.py4e.com/api/planets");
     const data = await response.json();
 
-    const makePlanets = async (planetsContainer) => {
+    const makePlanets = (planetsContainer) => {
       const planets = planetsContainer.slice(0, 6);
       return planets.map((planet) => ({
         name: planet.name,
@@ -16,10 +16,12 @@ const fetchPlanets = async () => {
         surface_water: planet.surface_water,
       }));
     };
-    const planetList = makePlanets(data.results);
-    return planetList;
+
+    return makePlanets(data.results);
   } catch (error) {
-    return;
+    console.error("Failed to fetch planets:", error);
+    return null;
   }
 };
+
 export default fetchPlanets;

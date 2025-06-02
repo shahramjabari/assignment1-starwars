@@ -31,7 +31,6 @@ body {
   border: 2px solid rgba(255, 215, 0, 0.7);
   box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.4);
   width: 280px;
-  height: auto;
   padding: var(--spacing-medium);
   display: flex;
   flex-direction: column;
@@ -71,6 +70,7 @@ body {
 
 /* -------------------------- */
 
+/* Back button previously placed at bottom */
 .button-container {
   display: flex;
   flex-wrap: wrap;
@@ -80,6 +80,16 @@ body {
   padding-top: var(--spacing-x-large);
 }
 
+/* New top right back-button container */
+.button-container-top {
+  display: flex;
+  justify-content: flex-end; /* 👈 Posisjonerer knappen til høyre */
+  width: 100%;
+  padding: var(--spacing-medium);
+  box-sizing: border-box;
+}
+
+/* Back button style */
 .home-page__button {
   background: var(--color-starwars);
   color: var(--color-card-header);
@@ -94,6 +104,14 @@ body {
 }
 
 .home-page__button:hover {
-  background: var(--color-starwars);
   box-shadow: 0px 0px 15px rgba(255, 215, 0, 1);
+}
+
+/* Error message for failed fetch */
+.error-message {
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: var(--spacing-medium);
+  text-align: center;
 }

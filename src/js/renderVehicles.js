@@ -1,3 +1,4 @@
+// renderVehicles.js
 import fetchVehicles from "./fetchVehicles.js";
 
 const vehicleImages = {
@@ -8,76 +9,62 @@ const vehicleImages = {
   Snowspeeder: "./src/assets/images/Snowspeeder.jpg",
   "TIE bomber": "./src/assets/images/Tie-Bomber.jpg",
 };
+
 const renderVehicles = async () => {
   const vehicleList = await fetchVehicles();
+  const vehiclesContainer = document.querySelector(".cards-container");
+  vehiclesContainer.innerHTML = "";
 
-  if (vehicleList && vehicleList.length > 0) {
-    const vehiclesContainer = document.querySelector(".cards-container");
-    vehiclesContainer.innerHTML = "";
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("button-container-top");
 
-    vehicleList.forEach((vehicle) => {
-      const card = document.createElement("div");
-      card.classList.add("card");
+  const homePageButton = document.createElement("button");
+  homePageButton.classList.add("home-page__button");
+  homePageButton.textContent = "Back To Homepage";
+  homePageButton.addEventListener("click", () => {
+    window.location.href = "./index.html";
+  });
 
-      const vehicleImage = document.createElement("img");
-      vehicleImage.classList.add("card__image");
-      vehicleImage.src = vehicleImages[vehicle.name];
-      card.append(vehicleImage);
+  buttonContainer.appendChild(homePageButton);
+  vehiclesContainer.appendChild(buttonContainer);
 
-      const title = document.createElement("h3");
-      title.classList.add("card__title");
-      title.textContent = vehicle.name;
-      card.append(title);
-
-      const model = document.createElement("p");
-      model.classList.add("card__info");
-      model.textContent = `Model: ${vehicle.model}`;
-      card.append(model);
-
-      const manufacturer = document.createElement("p");
-      manufacturer.classList.add("card__info");
-      manufacturer.textContent = `Manufacturer: ${vehicle.manufacturer}`;
-      card.append(manufacturer);
-
-      const costInCredits = document.createElement("p");
-      costInCredits.classList.add("card__info");
-      costInCredits.textContent = `Cost in Credits: ${vehicle.cost_in_credits}`;
-      card.append(costInCredits);
-
-      const length = document.createElement("p");
-      length.classList.add("card__info");
-      length.textContent = `Length: ${vehicle.length} m`;
-      card.append(length);
-
-      const crew = document.createElement("p");
-      crew.classList.add("card__info");
-      crew.textContent = `Crew: ${vehicle.crew}`;
-      card.append(crew);
-
-      const passengers = document.createElement("p");
-      passengers.classList.add("card__info");
-      passengers.textContent = `Passengers: ${vehicle.passengers}`;
-      card.append(passengers);
-
-      const cargoCapacity = document.createElement("p");
-      cargoCapacity.classList.add("card__info");
-      cargoCapacity.textContent = `Cargo Capacity: ${vehicle.cargo_capacity}`;
-      card.append(cargoCapacity);
-
-      vehiclesContainer.append(card);
-    });
-    const homePageButton = document.createElement("button");
-    homePageButton.classList.add("home-page__button");
-    homePageButton.textContent = "Back To Homepage";
-    homePageButton.addEventListener("click", () => {
-      window.location.href = "./index.html";
-    });
-
-    const buttonContainer = document.createElement("div");
-    buttonContainer.classList.add("button-container");
-    vehiclesContainer.append(buttonContainer);
-    buttonContainer.append(homePageButton);
+  if (!vehicleList || vehicleList.length === 0) {
+    const errorMsg = document.createElement("p");
+    errorMsg.classList.add("error-message");
+    errorMsg.textContent = "Failed to load vehicles. Please try again later.";
+    vehiclesContainer.appendChild(errorMsg);
+    return;
   }
+
+  vehicleList.forEach((vehicle) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const vehicleImage = document.createElement("img");
+    vehicleImage.classList.add("card__image");
+    vehicleImage.src =
+      vehicleImages[vehicle.name] || "./src/assets/images/default.jpg";
+    card.append(vehicleImage);
+
+    const info = [
+      `Model: ${vehicle.model}`,
+      `Manufacturer: ${vehicle.manufacturer}`,
+      `Cost in Credits: ${vehicle.cost_in_credits}`,
+      `Length: ${vehicle.length} m`,
+      `Crew: ${vehicle.crew}`,
+      `Passengers: ${vehicle.passengers}`,
+      `Cargo Capacity: ${vehicle.cargo_capacity}`,
+    ];
+
+    info.forEach((text) => {
+      const p = document.createElement("p");
+      p.classList.add("card__info");
+      p.textContent = text;
+      card.append(p);
+    });
+
+    vehiclesContainer.appendChild(card);
+  });
 };
 
 export default renderVehicles;
